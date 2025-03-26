@@ -19,7 +19,7 @@ async function callGeminiAPI(question) {
     }
 
     try {
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${GEMINI_API_KEY}`;
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
         
         const response = await fetch(apiUrl, {
             method: 'POST',
@@ -45,8 +45,8 @@ Include both the explanation and LaTeX code in your response.`
                     }]
                 }],
                 generationConfig: {
-                    temperature: 0.3,
-                    maxOutputTokens: 1024
+                    temperature: 0.1,
+                    maxOutputTokens: 8192
                 }
             })
         });
