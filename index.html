@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math AI LaTeX Processor</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Math AI LaTeX Processor</h1>
+
+      <!-- API Key Form -->
+      <div id="apiKeyForm" class="api-key-form">
+        <h2>Enter Your Gemini API Key</h2>
+        <div class="input-group">
+          <input
+            type="password"
+            id="apiKeyInput"
+            placeholder="Enter your Gemini API key"
+          />
+          <button
+            onclick="setApiKey(document.getElementById('apiKeyInput').value)"
+          >
+            Set API Key
+          </button>
+        </div>
+        <p class="info">
+          Your API key will be stored securely in your browser's local storage.
+        </p>
+      </div>
+
+      <!-- Main Content -->
+      <div id="mainContent" style="display: none">
+        <div class="input-section">
+          <textarea
+            id="userInput"
+            placeholder="Enter your mathematical question here..."
+          ></textarea>
+          <button onclick="processQuestion()">Process</button>
+        </div>
+
+        <div class="output-section">
+          <div class="response-box">
+            <h2>AI Response</h2>
+            <div id="aiResponse" class="content-box"></div>
+          </div>
+
+          <div class="latex-box">
+            <h2>LaTeX Code</h2>
+            <div id="latexCode" class="content-box code"></div>
+          </div>
+
+          <div class="rendered-box">
+            <h2>Rendered LaTeX</h2>
+            <div id="renderedLatex" class="content-box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
